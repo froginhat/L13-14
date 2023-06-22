@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="stylesheet" href="fon.css">
+ </head>
+ <body>
+    <p onmouseenter="text_red(this)" onmouseleave="text_base(this)">Преловский Максим Андреевич</p>
+    <p onclick="del()" id="for_del">Июль</p>
+    <img src="TowPrim.png" alt="">
+    <script type="text/javascript">
+        function thisURL()
+        {        
+            var currentUrl = window.location.href;
+            alert(currentUrl);                     
+        }
+        function del()
+        {
+            const p = document.querySelector('#for_del');
+            p.remove();
+        }
+        function text_red(el)
+        {
+             el.style.color='blue';
+             el.style.fontSize ='25px';
+             el.style.fontFamily ='verdana';
+             el.style.outline ='1px green';
+             el.style.border ='1px green';
+        }
+        function text_base(el)
+        {
+            el.style.color='black';
+            el.style.fontSize ='16px'
+            el.style.fontFamily ='none';
+            el.style.outline ='none';
+            el.style.border ='none';
+        }
+        function deep_color()
+        {
+            var deps=screen.colorDepth;
+            var newWin = window.open("about:blank", "hello", "width=800,height=600,scrollbars=no");
+            
+            newWin.document.write("Your screen color depth is: " + deps);
+        }
+        </script>
+    <button onclick="thisURL()">Посмотреть URL</button>
+    <button onclick="deep_color()">Глубина цвета</button>
+    </body>    
+</html>
